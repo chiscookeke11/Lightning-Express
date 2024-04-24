@@ -1,0 +1,111 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'poppins', sans-serif;
+}
+.mother-container{
+background: linear-gradient(rgba(0, 0, 0, 0.2),#03071e), url(data/nasa-Q1p7bh3SHj8-unsplash.jpg);
+	background-position: center;
+	background-size: cover;	
+}
+.details-container{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.2),#03071e), url(data/nasa-Q1p7bh3SHj8-unsplash.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.track-box{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+}
+.track-box h3{
+	font-size: 2.4rem;
+	color: #6a0a0f;
+	text-shadow: 0 0 3px silver;
+}
+.track-box input{
+	font-size: 1.2rem;
+	padding: 4px 15px;
+	width: 100%;
+	color: #000;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 0 3px #6a0a0f;
+}
+form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+.track-box button{
+	width: 50%;
+	max-width: 200px;
+	padding: 8px 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	background:#6a0a0f;
+	color: #fff;
+	font-weight: 600;
+	outline: none;
+	border: 1px solid silver;
+	border-radius: 3px;
+	transition: 0.3s ease-in-out;
+}
+.track-box button:hover{
+	color: #6a0a0f;
+	background: silver;
+}
+.reply{
+	border: 2px dashed #6a0a0f;
+	color: black;
+	font-size: 0.8rem;
+	font-weight: bold;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	gap: 20px;
+}
+#statusMessage{
+	margin: 20px;
+	flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

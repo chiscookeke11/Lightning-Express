@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery details - LightningExpress</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <section class="mother-container">
+        <nav class="navbar px-5 py-0" style="background:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3));">
+            <div class="container">
+                <a class="navbar-brand" href="index.htm">
+                    <img src="data/20230802_130736.png" alt="logo" width="100px">
+                </a>
+            </div>
+        </nav>
+        <section class="details-container">
+            <div class="track-box">
+                <h3>My Delivery Details</h3>
+                <form>
+                    <input type="text" id="trackingNumber" placeholder="Enter Tracking ID" required>
+                    <button type="button" id="trackbtn" onclick="trackDelivery()">View Details</button>
+                     <button id="downloadButton" onclick="downloadInformation()">Download </button>
+                </form>
+                <div class="reply">
+                    <p id="statusMessage"></p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <script>
+    	function trackDelivery() {
+      var trackingNumber = document.getElementById('trackingNumber').value;
+      
+      // Simulate an API call to retrieve the delivery status
+      var status = getDeliveryStatus(trackingNumber);
+      
+      var statusMessage = document.getElementById('statusMessage');
+      
+      if (status) {
+        statusMessage.innerHTML = '' + status;
+      } else {
+        statusMessage.innerHTML = 'Invalid tracking number!';
+      }
+    }
+    
+    function getDeliveryStatus(trackingNumber) {
+      // Simulated delivery status lookup
+      var deliveryStatuses = {
+        '87421963': 'NAME: VINNA NUMBER <br><br>ADDRESS: 659 NORTHCLIFFE BLVD. APT.308<br><br> TORONTO ON.M6E SB3 PEARSON <br>AIRPORT CANADA. <br><br>DELIVERY FEE: 2500 CAD ~~ paid <br><br>PHONE NUMBER: +1 4167890413  <br><br>SENDER: SAMUEL JOHN PAPARO <BR><BR> STATUS: OUT FOR DELIVERY ',
+        '59382714': 'NAME: ANASTASIA DROSOU <br>ADDRESS: RUPEL 39 N KIFISSIA, ATHENS, GREECE. <br>DELIVERY FEE: 2500 EUR ~~ paid <br>PHONE NUMBER: 6974126220 <br>SENDER: KARL OWEN THOMAS',
+        '16340892': 'NAME: LAMONTAGNE REBECCA <br>ADDRESS: 21 RISING TAIL DRIVE MIDDLETOWN, <br> CT 06457 BRADLEY INTERNATIONAL <BR>AIRPORT, UNITED STATES. <br>DELIVERY FEE: 2500 EUR ~~ not paid <br>PHONE NUMBER: 860-670-1788 <br>SENDER: KARL OWEN THOMAS',
+        "4453277CF": 'NAME:PAMELA POORMAN <br> ADDRESS: 25 KURT DR BENTON, KY <BR> DELIVERY FEE: $3,000 <BR> PHONE NUMBER: 615-945-3910 <BR> SENDER: KARL OWEN THOMAS<BR><BR> STATUS: OUT FOR DELIVERY',
+        "JP317632JP": 'NAME: LAMONTAGNE REBECCA <br><br>ADDRESS: 21 RISING TAIL DRIVE MIDDLETOWN, <br><br> CT 06457 BRADLEY INTERNATIONAL<br> AIRPORT, UNITED STATES. <br><br>DELIVERY FEE: 2500 EUR ~~ not paid <br><br>PHONE NUMBER: 860-670-1788 <br><br>SENDER: KARL OWEN THOMAS',
+      };
+      
+      return deliveryStatuses[trackingNumber];
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+    var trackingNumberInput = document.getElementById('trackingNumber');
+    trackingNumberInput.value = ''; // Clear the input field on page load
+});
+function downloadInformation() {
+        var statusMessage = document.getElementById('statusMessage').textContent;
+        var filename = 'delivery_information.txt';
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(statusMessage));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var trackingNumberInput = document.getElementById('trackingNumber');
+        trackingNumberInput.value = '';
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
