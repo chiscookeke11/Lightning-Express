@@ -9,7 +9,7 @@
         59382714: { name: "5938714", latitude: 36.1776, longitude: 133.3297 },
         16340892: { name: "16340892", latitude: 36.7400, longitude: 139.4936 },
         "4453277CF": { name: "4453277CF", latitude: 36.7400, longitude: 139.4936 },
-        "JP317632JP": { name: "4453277CF", latitude: 88.7400, longitude: 19.4936 },
+        "JP317632JP": { name: "JP317632JP", latitude: 35.7647, longitude: 140.3864  },
       };
 
       const friend = friendsLocations[friendLocation];

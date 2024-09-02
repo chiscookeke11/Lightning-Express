@@ -278,6 +278,11 @@ hr{
 	bottom: 25% !important;
 
 }
+.single-service img{
+	width: 300px;
+	height: 300px;
+	border-radius: 7px;
+}
 }
 /*-------testimonials------*/
 #testimonial{
@@ -324,7 +329,6 @@ hr{
 .user-info ion-icon{
 	margin-left: 10px;
 	color: #27c0ff;
-	color: ;
 }
 .user-info small{
 	color: #6a0a0f;
